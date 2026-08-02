@@ -1,0 +1,10 @@
+*.rds
+*.h5
+*.h5ad
+*.h5seurat
+Results/
+Data/
+*.pdf
+.Rhistory
+.RData
+.Rproj.user/
