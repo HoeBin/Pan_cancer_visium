@@ -1,0 +1,339 @@
+"cell_pair","cancer_type","row_order","col_order","value","raw_J_comp_agg","mask","n_cancer_topk","top_k","agg","value_type","fill_label","fill_min","fill_mid","fill_max"
+"B cell-T cell","LICA",1,1,1.6418062,0.82602017,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","BRCA",1,2,2.48273739,0.74634146,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","KICA",1,3,2.87774704,0.64397906,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","COCA",1,4,2.04589852,0.50957535,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","PACA",1,5,3.14338591,0.5082702,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","STCA",1,6,2.39485263,0.45955882,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","UECA",1,7,-1.2900115,0.30843373,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","HNCA",1,8,0.72309548,0.36370507,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","SKCA",1,9,0.21938687,0.31277519,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","THCA",1,10,1.30297681,0.45054945,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","PRCA",1,11,0.97240092,0.50430694,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","OVCA",1,12,1.38535114,0.65054719,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-T cell","LUCA",1,13,1.35975652,0.50770509,FALSE,13,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","LICA",2,1,-1.1512058,0.67365326,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","BRCA",2,2,2.07683119,0.67088608,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","KICA",2,3,0.64362429,0.29157667,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","COCA",2,4,0.83380031,0.39828897,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","PACA",2,5,0.56958709,0.24695675,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","STCA",2,6,0.40333595,0.26769912,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","UECA",2,7,2.37512,0.62037037,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","HNCA",2,8,1.88208425,0.5056398,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","SKCA",2,9,2.34275034,0.49542851,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","THCA",2,10,1.36967023,0.45833333,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","PRCA",2,11,-1.4003566,0.08804581,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","OVCA",2,12,0.41588983,0.40035,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Mural","LUCA",2,13,-0.2888439,0.22074665,FALSE,11,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","LICA",3,1,1.60785493,0.82416803,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","BRCA",3,2,-0.1417959,0.25845737,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","KICA",3,3,0.04700648,0.19746835,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","COCA",3,4,1.37788599,0.44824311,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","PACA",3,5,-0.1278091,0.17615129,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","STCA",3,6,0.7846216,0.3044316,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","UECA",3,7,-0.6587239,0.36216216,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","HNCA",3,8,1.65060235,0.47729154,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","SKCA",3,9,1.82607488,0.4509837,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","THCA",3,10,-0.4427594,0.24680211,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","PRCA",3,11,1.34195487,0.56913907,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","OVCA",3,12,1.38233826,0.64976963,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Myeloid-T cell","LUCA",3,13,1.64879784,0.55801616,FALSE,10,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","LICA",4,1,0.62748325,0.77068591,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","BRCA",4,2,-0.0367844,0.27797834,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","KICA",4,3,1.11170803,0.3654105,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","COCA",4,4,-0.2722504,0.29673913,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","PACA",4,5,-0.4571629,0.14271255,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","STCA",4,6,1.3775975,0.361558,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","UECA",4,7,0.32403679,0.4458042,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","HNCA",4,8,0.66921919,0.35710715,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","SKCA",4,9,0.18797466,0.31007309,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","THCA",4,10,-0.8605257,0.19804401,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","PRCA",4,11,-0.0768507,0.32023307,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","OVCA",4,12,1.76861179,0.74945855,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Mural","LUCA",4,13,1.9064426,0.60286228,FALSE,9,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","LICA",5,1,1.28482116,0.8065456,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","BRCA",5,2,-0.267859,0.23502304,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","KICA",5,3,-0.0533739,0.18163471,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","COCA",5,4,-0.473313,0.27827897,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","PACA",5,5,-0.8423341,0.10360677,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","STCA",5,6,0.31411435,0.25910364,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","UECA",5,7,-0.2911909,0.39344262,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","HNCA",5,8,-0.4414021,0.22109571,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","SKCA",5,9,-0.9252392,0.21431359,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","THCA",5,10,-0.1743379,0.27812995,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","PRCA",5,11,0.74310514,0.46408078,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","OVCA",5,12,0.80437331,0.50060926,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Myeloid","LUCA",5,13,0.72709747,0.39758328,FALSE,6,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","LICA",6,1,-0.8784877,0.68853083,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","BRCA",6,2,-0.3900544,0.21230769,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","KICA",6,3,-0.782236,0.06666667,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","COCA",6,4,0.73415536,0.38914027,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","PACA",6,5,-0.0820279,0.18079938,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","STCA",6,6,-0.7098601,0.16045549,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","UECA",6,7,1.89640126,0.57962697,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","HNCA",6,8,-0.9135073,0.16327968,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","SKCA",6,9,-0.1806837,0.27836082,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","THCA",6,10,0.65388225,0.3747927,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","PRCA",6,11,1.29465238,0.56084063,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","OVCA",6,12,-0.7657965,0.09538209,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-T cell","LUCA",6,13,-0.0812185,0.2568863,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","LICA",7,1,-1.4020463,0.65996919,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","BRCA",7,2,-0.630358,0.16763679,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","KICA",7,3,-0.4107569,0.12526242,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","COCA",7,4,0.36981977,0.35568953,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","PACA",7,5,0.21857759,0.21131935,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","STCA",7,6,-0.1321237,0.21611374,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","UECA",7,7,-0.03945,0.41486811,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","HNCA",7,8,-0.457786,0.21908926,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","SKCA",7,9,-1.2228423,0.18871355,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","THCA",7,10,0.02585726,0.30149502,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","PRCA",7,11,0.94224503,0.49901658,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","OVCA",7,12,-0.7191231,0.10742749,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Myeloid","LUCA",7,13,-0.387085,0.2036466,FALSE,5,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","LICA",8,1,-0.600301,0.70370672,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","BRCA",8,2,-0.1857686,0.25028313,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","KICA",8,3,-0.1005775,0.174189,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","COCA",8,4,-1.3481497,0.19795758,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","PACA",8,5,0.0968105,0.19895654,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","STCA",8,6,-0.2115458,0.20846233,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","UECA",8,7,-0.740484,0.35520362,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","HNCA",8,8,1.00478796,0.39820234,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","SKCA",8,9,-0.057182,0.28898453,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","THCA",8,10,-0.9439136,0.18831169,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","PRCA",8,11,-0.3991931,0.26368343,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","OVCA",8,12,0.23204638,0.35290394,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Endothelial-Fibroblast","LUCA",8,13,-0.6631864,0.15558789,FALSE,4,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","LICA",9,1,-0.2459594,0.72303708,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","BRCA",9,2,-0.7193222,0.1510989,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","KICA",9,3,-0.7413669,0.07311321,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","COCA",9,4,-1.1853195,0.21290752,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","PACA",9,5,-0.4815736,0.14023417,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","STCA",9,6,-1.3028215,0.10333049,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","UECA",9,7,-0.2255103,0.39903265,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","HNCA",9,8,-0.5878922,0.20315591,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","SKCA",9,9,0.02784591,0.29629869,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","THCA",9,10,1.28089098,0.44797178,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","PRCA",9,11,-1.5310937,0.06511016,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","OVCA",9,12,-0.9412323,0.05010585,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Mural","LUCA",9,13,-0.9167593,0.11145052,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","LICA",10,1,-0.6985422,0.69834738,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","BRCA",10,2,-0.2828651,0.2322335,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","KICA",10,3,-0.7013389,0.07942708,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","COCA",10,4,0.02049904,0.32361734,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","PACA",10,5,0.07309013,0.19654825,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","STCA",10,6,-0.6840232,0.16294458,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","UECA",10,7,-0.6213905,0.36533958,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","HNCA",10,8,-0.8842527,0.16686233,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","SKCA",10,9,-0.2542685,0.27203099,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","THCA",10,10,0.80842242,0.39282931,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","PRCA",10,11,0.4435125,0.4115222,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","OVCA",10,12,-0.8415177,0.07584007,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"B cell-Endothelial","LUCA",10,13,-0.7282886,0.14425608,FALSE,2,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","LICA",11,1,0.41881,0.75930218,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","BRCA",11,2,-0.6461245,0.16470588,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","KICA",11,3,-0.7573745,0.07058824,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","COCA",11,4,-0.3535095,0.28927849,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","PACA",11,5,-0.5364397,0.13466371,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","STCA",11,6,-0.7138242,0.1600736,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","UECA",11,7,-0.1073297,0.40909091,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","HNCA",11,8,-1.041008,0.1476654,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","SKCA",11,9,-0.2758813,0.27017184,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","THCA",11,10,0.08682288,0.3086104,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","PRCA",11,11,-1.4357477,0.08183704,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","OVCA",11,12,-0.9481398,0.04832318,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Mural-T cell","LUCA",11,13,-0.8686202,0.11982969,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","LICA",12,1,0.11336857,0.74263946,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","BRCA",12,2,-0.7682054,0.14201183,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","KICA",12,3,-0.6548632,0.08675799,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","COCA",12,4,-1.3039009,0.2020202,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","PACA",12,5,-0.9136109,0.09637016,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","STCA",12,6,-0.9762049,0.13479624,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","UECA",12,7,0.06552693,0.42380261,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","HNCA",12,8,-0.8928552,0.16580882,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","SKCA",12,9,-1.1086159,0.19853939,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","THCA",12,10,-1.6298764,0.108252,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","PRCA",12,11,-0.5131734,0.24368746,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","OVCA",12,12,-0.8933026,0.06247549,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-T cell","LUCA",12,13,-0.9065462,0.11322824,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","LICA",13,1,-0.7176017,0.69730763,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","BRCA",13,2,-0.4904309,0.19364833,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","KICA",13,3,-0.478198,0.11462451,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","COCA",13,4,-0.445616,0.28082192,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","PACA",13,5,-0.6604929,0.1220688,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","STCA",13,6,-0.5441187,0.17642276,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","UECA",13,7,-0.6869942,0.3597561,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","HNCA",13,8,-0.7110858,0.18806909,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","SKCA",13,9,-0.5793197,0.24406985,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","THCA",13,10,-1.47711,0.12608158,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","PRCA",13,11,-0.3814556,0.26679517,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","OVCA",13,12,-0.8794988,0.06603796,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5
+"Fibroblast-Myeloid","LUCA",13,13,-0.8015464,0.13150468,FALSE,1,5,"median","zscore_by_cancer_type","z-score
+ (median Co-enrichment)",-1.5,0,1.5

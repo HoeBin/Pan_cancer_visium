@@ -1,0 +1,8 @@
+"celltype","source_column","correlation","p_value","n"
+"Epithelial","Epi_enriched",0.30710269,0,635720
+"Endothelial","EC_enriched",-0.0614868,0,635720
+"Myeloid","Mye_enriched",-0.0982103,0,635720
+"Bcell","B_enriched",-0.1464711,0,635720
+"Mural","Mu_enriched",-0.1574348,0,635720
+"Fibroblast","Fib_enriched",-0.1666661,0,635720
+"Tcell","T_enriched",-0.2390101,0,635720

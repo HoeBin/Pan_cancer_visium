@@ -9,3 +9,11 @@ Data/
 .RData
 .Rproj.user/
 .ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Extended Fig1/2 excluded from this GitHub release (kept locally only)
+Visium/Figure/ExtendedFigure1.R
+Visium/Figure/ExtendedFigure2.R
+Visium/Figure/Output/ExtendedFigure1/
+Visium/Figure/Output/ExtendedFigure2/
