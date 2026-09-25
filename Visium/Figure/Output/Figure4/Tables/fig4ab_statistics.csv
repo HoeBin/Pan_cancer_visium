@@ -1,0 +1,13 @@
+panel,signature,comparison,test,n_slides,pvalue
+fig4a,Epithelial,Mal-Bdy-Normal,friedman,268,1.234054809803844e-47
+fig4a,Epithelial,Mal-Bdy,wilcoxon_signed_rank,268,1.1354581668596212e-28
+fig4a,Epithelial,Bdy-Normal,wilcoxon_signed_rank,268,1.5364801394492075e-18
+fig4a,Epithelial,Mal-Normal,wilcoxon_signed_rank,268,2.1397488805831156e-27
+fig4a,Mesenchymal,Mal-Bdy-Normal,friedman,268,1.4029205356100486e-51
+fig4a,Mesenchymal,Mal-Bdy,wilcoxon_signed_rank,268,1.0257284364913608e-34
+fig4a,Mesenchymal,Bdy-Normal,wilcoxon_signed_rank,268,5.147483917528289e-11
+fig4a,Mesenchymal,Mal-Normal,wilcoxon_signed_rank,268,1.4476156437544154e-31
+fig4b,pEMT,Mal-Bdy-Normal,friedman,268,2.0872450006262785e-13
+fig4b,pEMT,Mal-Bdy,wilcoxon_signed_rank,268,1.4642475262673746e-15
+fig4b,pEMT,Bdy-Normal,wilcoxon_signed_rank,268,0.042454810691558285
+fig4b,pEMT,Mal-Normal,wilcoxon_signed_rank,268,0.0005040981862784877

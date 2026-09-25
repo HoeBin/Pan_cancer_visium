@@ -5,6 +5,8 @@
 Results/
 Data/
 *.pdf
+# 재현 결과 그림은 Visium/Figure/Output/ 아래에서만 올린다
+!Visium/Figure/Output/**/*.pdf
 .Rhistory
 .RData
 .Rproj.user/
@@ -12,8 +14,6 @@ Data/
 __pycache__/
 *.pyc
 
-# Extended Fig1/2 excluded from this GitHub release (kept locally only)
-Visium/Figure/ExtendedFigure1.R
-Visium/Figure/ExtendedFigure2.R
-Visium/Figure/Output/ExtendedFigure1/
-Visium/Figure/Output/ExtendedFigure2/
+# Visium/Figure/Paper_info: 논문 공식 배포 자료 중 Source_Data만 올린다 (원고·Figure PDF/PPTX 등 제외)
+Visium/Figure/Paper_info/Paper_info/*
+!Visium/Figure/Paper_info/Paper_info/Source_Data/

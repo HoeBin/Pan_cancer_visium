@@ -1,0 +1,93 @@
+node,lineage,degree
+ABC,B cell,39
+NR4A2+_Bn,B cell,38
+CD14+_Mono,Myeloid,31
+CD16+_Mono,Myeloid,53
+CD16+_NK,T cell,48
+CD16-_NK,T cell,46
+CD1C+_cDC,Myeloid,43
+CLEC9A+_cDC,Myeloid,37
+FOLR2+_Macro,Myeloid,36
+CD4_CXCL13+_T,T cell,37
+CD4_Tfh,T cell,44
+Bgc,B cell,40
+ILC3,T cell,33
+CD8_ISG15+_T,T cell,40
+LAMP3+_cDC,Myeloid,34
+LILRA4+_pDC,Myeloid,42
+MAIT,T cell,46
+Macro,Myeloid,52
+Bmem,B cell,36
+NK,T cell,46
+Bn,B cell,38
+Plasma,B cell,29
+Cycling_Bgc,B cell,14
+CD4_Unassigned_T,T cell,48
+TMEM100+_EC,Endothelial,23
+TNFSF10+_Macro,Myeloid,30
+CD8_Tcm/Tn,T cell,35
+CD4_Tcm/Tn,T cell,37
+CD4_Tem/Effector,T cell,43
+CD8_Tem/Temra,T cell,39
+CD8_Tem/Trm,T cell,44
+CD8_Trm,T cell,44
+CD4_Th17,T cell,40
+CD4_Th1,T cell,43
+Venous_iEC,Endothelial,38
+CD8_Cycling_Tex,T cell,36
+CD4_Cycling_Treg,T cell,36
+CD8_Tex,T cell,40
+gd_T,Myeloid,41
+CD4_Treg,T cell,37
+Arterial_EC,Endothelial,19
+CD14+_EC,Endothelial,26
+Capillary_EC,Endothelial,24
+Fibrosis_PGF+_Tip_EC,Endothelial,13
+HSP+_tCAF,Fibroblast,18
+IL6+_iCAF,Fibroblast,29
+Lymphatic_EC,Endothelial,28
+Mast,Myeloid,32
+PGF+_Tip_EC,Endothelial,15
+PI16+_iCAF,Fibroblast,14
+Pericyte,Mural,17
+SMC,Mural,12
+SPRY1+_EC,Endothelial,28
+Tip_EC,Endothelial,14
+Venous_EC,Endothelial,36
+iCAF,Fibroblast,19
+myoCAF,Fibroblast,23
+pnCAF,Fibroblast,18
+vCAF,Fibroblast,34
+CXCL3+_Macro,Myeloid,40
+CCL2+_iEC,Endothelial,13
+HMOX1+_iEC,Endothelial,10
+HSPA6+_Macro,Myeloid,11
+SPP1+_CXCL3+_Macro,Myeloid,10
+SPP1+_MT1+_Macro,Myeloid,24
+CXCL14+_mCAF,Fibroblast,25
+ISG15+_mCAF,Fibroblast,14
+tCAF,Fibroblast,13
+SPP1+_cycMacro,Myeloid,15
+HMGB2+_cycEC,Endothelial,14
+apCAF,Fibroblast,21
+mCAF,Fibroblast,7
+Normal_Fibroblast,Fibroblast,7
+Epi_Cycle,Epithelial,3
+Epi_Luminal,Epithelial,6
+Epi_Hypox-Stress,Epithelial,10
+Epi_ER-Stress,Epithelial,6
+Epi_Hypox-Adapt,Epithelial,7
+Epi_Ciliated,Epithelial,4
+Epi_Oxphos-Ion,Epithelial,6
+Epi_Basal,Epithelial,5
+Epi_MHCII,Epithelial,9
+Epi_Hormonal,Epithelial,6
+Epi_cEMT,Epithelial,8
+Epi_Xenobiotic,Epithelial,4
+Epi_Glandular,Epithelial,5
+Epi_TNF,Epithelial,5
+Epi_Interferon,Epithelial,5
+Epi_Squamous,Epithelial,4
+cyc_mCAF,Fibroblast,9
+SPP1+_Macro,Myeloid,5
+Plasmablast,B cell,2

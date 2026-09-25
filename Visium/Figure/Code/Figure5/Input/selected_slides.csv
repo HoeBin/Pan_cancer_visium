@@ -1,0 +1,6 @@
+sample_id,cancer_type,cell_type_1,cell_type_2,ligand,receptor,jaccard
+01_039_C3d1,UECA,T cell,B cell,TGFB3,ITGB5,0.411494252873563
+GSM6833484_Patient1,HNCA,T cell,B cell,C3,CD46,0.0237467018469657
+GSM6433621_397B,BRCA,T cell,B cell,THBS2,CD36,0.448132780082988
+CytAssist_11mm_FFPE_Human_Ovarian_Carcinoma_220715,OVCA,Endothelial,Mural,COL1A2,ITGA11,0.31267217630854
+CytAssist_11mm_FFPE_Human_Lung_Cancer_230214,LUCA,Endothelial,Mural,NPNT,ITGA8,0.050251256281407

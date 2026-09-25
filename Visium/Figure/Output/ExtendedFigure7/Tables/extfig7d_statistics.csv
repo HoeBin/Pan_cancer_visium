@@ -1,0 +1,10 @@
+panel,category,comparison,test,n_slides,pvalue
+extfig7d,Epi-Epi,Mal-Bdy,wilcoxon_signed_rank,211,4.663647296232661e-05
+extfig7d,Epi-Epi,Bdy-Normal,wilcoxon_signed_rank,211,1.5829098923586692e-12
+extfig7d,Epi-Epi,Mal-Normal,wilcoxon_signed_rank,211,0.0011213032799676054
+extfig7d,Epi-TME,Mal-Bdy,wilcoxon_signed_rank,211,0.01739961068024151
+extfig7d,Epi-TME,Bdy-Normal,wilcoxon_signed_rank,211,7.421501646010107e-20
+extfig7d,Epi-TME,Mal-Normal,wilcoxon_signed_rank,211,1.2197200990441965e-12
+extfig7d,TME-TME,Mal-Bdy,wilcoxon_signed_rank,211,0.00025843549080961024
+extfig7d,TME-TME,Bdy-Normal,wilcoxon_signed_rank,211,2.694542224635439e-17
+extfig7d,TME-TME,Mal-Normal,wilcoxon_signed_rank,211,5.554881699735321e-07

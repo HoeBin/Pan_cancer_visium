@@ -1,0 +1,95 @@
+subtype,lineage
+ABC,B cell
+Arterial_EC,Endothelial
+Bgc,B cell
+Bmem,B cell
+Bn,B cell
+CCL2+_iEC,Endothelial
+CD14+_EC,Endothelial
+CD14+_Mono,Myeloid
+CD16+_Mono,Myeloid
+CD16+_NK,T cell
+CD16-_NK,T cell
+CD1C+_cDC,Myeloid
+CD4_CXCL13+_T,T cell
+CD4_Cycling_Treg,T cell
+CD4_Tcm/Tn,T cell
+CD4_Tem/Effector,T cell
+CD4_Tfh,T cell
+CD4_Th1,T cell
+CD4_Th17,T cell
+CD4_Treg,T cell
+CD4_Unassigned_T,T cell
+CD8_Cycling_Tex,T cell
+CD8_ISG15+_T,T cell
+CD8_Tcm/Tn,T cell
+CD8_Tem/Temra,T cell
+CD8_Tem/Trm,T cell
+CD8_Tex,T cell
+CD8_Trm,T cell
+CLEC9A+_cDC,Myeloid
+CXCL14+_mCAF,Fibroblast
+CXCL3+_Macro,Myeloid
+Capillary_EC,Endothelial
+Cycling_Bgc,B cell
+Epi_Basal,Epithelial
+Epi_Ciliated,Epithelial
+Epi_Cycle,Epithelial
+Epi_ER-Stress,Epithelial
+Epi_Glandular,Epithelial
+Epi_Hormonal,Epithelial
+Epi_Hypox-Adapt,Epithelial
+Epi_Hypox-Stress,Epithelial
+Epi_Interferon,Epithelial
+Epi_Luminal,Epithelial
+Epi_MHCII,Epithelial
+Epi_Oxphos-Ion,Epithelial
+Epi_Oxphos-Metal,Epithelial
+Epi_Squamous,Epithelial
+Epi_TNF,Epithelial
+Epi_Xenobiotic,Epithelial
+Epi_cEMT,Epithelial
+FOLR2+_Macro,Myeloid
+Fibroblast,Fibroblast
+Fibrosis_PGF+_Tip_EC,Endothelial
+HMGB2+_cycEC,Endothelial
+HMOX1+_iEC,Endothelial
+HSP+_tCAF,Fibroblast
+HSPA6+_Macro,Myeloid
+IL6+_iCAF,Fibroblast
+ILC3,T cell
+ISG15+_mCAF,Fibroblast
+LAMP3+_cDC,Myeloid
+LILRA4+_pDC,Myeloid
+Lymphatic_EC,Endothelial
+MAIT,T cell
+Macro,Myeloid
+Mast,Myeloid
+NK,T cell
+NR4A2+_Bn,B cell
+Normal_Fibroblast,Fibroblast
+PGF+_Tip_EC,Endothelial
+PI16+_iCAF,Fibroblast
+Pericyte,Mural
+Plasma,B cell
+Plasmablast,B cell
+SMC,Mural
+SPP1+_CXCL3+_Macro,Myeloid
+SPP1+_MT1+_Macro,Myeloid
+SPP1+_Macro,Myeloid
+SPP1+_cycMacro,Myeloid
+SPRY1+_EC,Endothelial
+TMEM100+_EC,Endothelial
+TNFSF10+_Macro,Myeloid
+Tip_EC,Endothelial
+Venous_EC,Endothelial
+Venous_iEC,Endothelial
+apCAF,Fibroblast
+cyc_mCAF,Fibroblast
+iCAF,Fibroblast
+mCAF,Fibroblast
+myoCAF,Fibroblast
+pnCAF,Fibroblast
+tCAF,Fibroblast
+vCAF,Fibroblast
+γδ_T,T cell
