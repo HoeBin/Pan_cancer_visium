@@ -18,3 +18,20 @@ Corresponds to the manuscript Methods sections:
   (CellTalkDB) with cell-type pairs.
 - **Gene-set scoring of Visium spots** — epithelial, mesenchymal, and pEMT signature
   scoring.
+
+## Figure reproduction
+
+[`Figure/`](Figure/README_reproduction.md) reproduces the data-driven panels of the main and extended figures
+(R and Python) from the officially distributed Source Data (`Figure/Paper_info/Paper_info/Source_Data/*.xlsx`).
+Outputs (CSV tables and PDF plots) are written to `Figure/Output/`.
+
+```bash
+cd Visium/Figure
+Rscript Code/run_all.R                    # Fig. 1, 2, 3a (+ Ext. Fig. 7a), 4c, 5a-b
+Rscript Code/run_all_extended.R           # Ext. Fig. 1, 2, 4, 5a
+python Code/run_all_python.py             # Fig. 3, 4, 5d and the remaining Ext./Supp. Figures
+```
+
+Fig. 3a uses the bundled `Figure/Code/Figure3/Input/fig3a_source_data.csv` (abundance-based correlation,
+13 cancer types); see [`Figure/README_reproduction.md`](Figure/README_reproduction.md) for the input details,
+the panels that are not reproducible from Source Data, and the optional h5ad-based panels.
