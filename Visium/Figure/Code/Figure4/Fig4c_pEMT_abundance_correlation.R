@@ -1,19 +1,19 @@
-# 분석 목적
-#   - Source_Data_Fig4.xlsx로부터 Figure 4c(pEMT-abundance correlation rank plot)를 재현한다.
+# Purpose
+#   - Reproduces Figure 4c (pEMT-abundance correlation rank plot) from Source_Data_Fig4.xlsx.
 #
-# 분석 흐름
-#   1. Fig.4c 각 cell subtype의 pEMT score와의 Spearman 상관계수 순위를 산점도로 그린다.
+# Workflow
+#   1. Draw the rank of the Spearman correlation of each cell subtype with the pEMT score as a scatter plot.
 #
-# 주요 출력
+# Main outputs
 #   - Fig4c.pdf
 #
-# 출력 위치
+# Output location
 #   - Output/Figure4/
 #
-# 참고: Fig.4a/b(compartment별 signature score)는 Figure4/Fig4ab_signature_panels.py
-# (paired Wilcoxon + Friedman 재계산, 268 slide-matched)가 담당한다. Fig.4d(LR pair rank),
-# Fig.4f(hazard ratio forest), Fig.4g(Kaplan-Meier), Fig.4e(PACA 샘플 spatial multi-panel)는
-# Figure4/03-06의 Python 스크립트가 담당한다.
+# Note: Fig.4a/b (signature scores per compartment) are handled by Figure4/Fig4ab_signature_panels.py
+# (recomputed with paired Wilcoxon + Friedman, 268 slide-matched). Fig.4d (LR pair rank),
+# Fig.4f (hazard ratio forest), Fig.4g (Kaplan-Meier) and Fig.4e (PACA sample spatial multi-panel) are handled
+# by the Python scripts in Figure4/.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({

@@ -1,7 +1,8 @@
-# Paper_info/Source_Data의 공식 Source Data(Fig.3a는 번들 CSV)를 입력으로 사용해 Figure1, 2, 3(a), 4(c), 5(a,b)와
-# Ext.Fig.7a의 R 패널을 순서대로 실행한다. Fig.3(b-h)와 Fig.4(a,b,d,f,g)/Fig.5(c,d)는 Python으로
-# 재현되며 run_all_python.py가 담당한다 (겹치는 패널은 그쪽이 우선; README 참고).
-# 개별 스크립트도 `Rscript Code/FigureN.R` 또는 `Rscript Code/FigureN/*.R`로 독립 실행 가능하다.
+# Runs the R panels (Figures 1, 2, 3a, 4c, 5a-b and Ext. Fig. 7a) in order, using the officially distributed
+# Source Data in Paper_info/Source_Data (Fig. 3a uses a bundled CSV) as input. Fig. 3(b-h), Fig. 4(a,b,d,f,g) and
+# Fig. 5(c,d) are reproduced in Python and handled by run_all_python.py (Python takes precedence for overlapping
+# panels; see the README).
+# Each script can also be run on its own with `Rscript Code/FigureN.R` or `Rscript Code/FigureN/*.R`.
 
 script_arg  <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- normalizePath(sub("^--file=", "", script_arg))

@@ -1,15 +1,15 @@
-# 분석 목적
-#   - Source_Data_Extended_Fig2.xlsx로부터 Extended Fig.2a-g를 재현한다
-#     (major cell type별 subtype x 암종 Ro/e(관측/기대비) heatmap).
+# Purpose
+#   - Reproduces Extended Fig.2a-g from Source_Data_Extended_Fig2.xlsx
+#     (subtype x cancer type Ro/e (observed/expected ratio) heatmap per major cell type).
 #
-# 분석 흐름
-#   1. Major_cell_type(7개)별로 Cell_subtype x Cancer_type Ro/e 행렬을 만든다.
-#   2. 셀 안에 Ro/e 값과 유의 기호(Ro_e_symbol)를 함께 표기하는 heatmap을 그린다.
+# Workflow
+#   1. Build a Cell_subtype x Cancer_type Ro/e matrix for each of the 7 Major_cell_types.
+#   2. Draw a heatmap that shows the Ro/e value and significance symbol (Ro_e_symbol) in each cell.
 #
-# 주요 출력
-#   - ExtFig2a(T cell) … ExtFig2g(Epithelial) PDF (7개)
+# Main outputs
+#   - ExtFig2a(T cell) … ExtFig2g(Epithelial) PDFs (7 files)
 #
-# 출력 위치
+# Output location
 #   - Output/ExtendedFigure2/
 
 # "Libraries and paths" -------------------------------------------------------
@@ -54,8 +54,8 @@ for (panel in names(panels)) {
     cell_fun = function(j, i, x, y, width, height, fill) {
       grid.text(label_mat[i, j], x, y, gp = gpar(fontsize = 6.5, col = "black"))
     })
-  # cairo_pdf 사용: subtype 이름에 그리스 문자(예: gamma-delta T)가 있어 기본 pdf()
-  # 장치(mbcsToSbcs)로는 렌더링이 깨진다.
+  # Use cairo_pdf: subtype names contain Greek letters (e.g. gamma-delta T), which the default pdf()
+  # device (mbcsToSbcs) renders incorrectly.
   cairo_pdf(file.path(plot_dir, paste0("ExtFig2", panel, ".pdf")),
       width = 9, height = max(4, 0.35 * length(subtype_order) + 1.5))
   draw(ht)

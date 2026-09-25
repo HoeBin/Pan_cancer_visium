@@ -5,7 +5,7 @@
 Results/
 Data/
 *.pdf
-# 재현 결과 그림은 Visium/Figure/Output/ 아래에서만 올린다
+# Reproduced figure PDFs are tracked only under Visium/Figure/Output/
 !Visium/Figure/Output/**/*.pdf
 .Rhistory
 .RData
@@ -14,6 +14,6 @@ Data/
 __pycache__/
 *.pyc
 
-# Visium/Figure/Paper_info: 논문 공식 배포 자료 중 Source_Data만 올린다 (원고·Figure PDF/PPTX 등 제외)
+# Visium/Figure/Paper_info: of the officially distributed material, only Source_Data is tracked (manuscript, Figure PDFs/PPTX, etc. are excluded)
 Visium/Figure/Paper_info/Paper_info/*
 !Visium/Figure/Paper_info/Paper_info/Source_Data/

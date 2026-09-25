@@ -1,28 +1,29 @@
-# 분석 목적
-#   - Figure 5a, 5b를 재현한다 (pan-cancer 재현성, LR z-score).
+# Purpose
+#   - Reproduces Figures 5a and 5b (pan-cancer reproducibility, LR z-score).
 #
-# 분석 흐름
-#   1. Fig.5a 암종별 주요 cell-type pair z-score heatmap과 재현 암종 수 barplot을 그린다
-#      (Source_Data_Fig5.xlsx 사용).
-#   2. Fig.5b T cell-B cell 및 Endothelial-Mural LR pair z-score heatmap을 그린다
-#      (Source_Data_Fig5.xlsx의 Fig.5b top 시트 사용, 아래 검증 참고).
+# Workflow
+#   1. Draw the per-cancer-type z-score heatmap of the top cell-type pairs and the barplot of the number of
+#      reproducing cancer types for Fig.5a (uses Source_Data_Fig5.xlsx).
+#   2. Draw the z-score heatmaps of the T cell-B cell and Endothelial-Mural LR pairs for Fig.5b
+#      (uses the "Fig.5b top" sheet of Source_Data_Fig5.xlsx; see the validation below).
 #
-# 주요 출력
+# Main outputs
 #   - Fig5a.pdf, Fig5b.pdf
 #
-# 출력 위치
+# Output location
 #   - Output/Figure5/
 #
-# 참고: Fig.5c(UECA/HNCA/BRCA/OVCA/LUCA 샘플의 spatial co-enrichment 이미지)는
-# Figure5/Fig5c_spatial_lr_overlap.py(외부 Visium h5ad 필요)가, Fig.5d(scRNA-seq/Visium
-# LR strength 암종별 density/상관관계)는 Figure5/Fig5d_sc_vs_visium_scatter.py가 담당한다.
+# Note: Fig.5c (spatial co-enrichment images of UECA/HNCA/BRCA/OVCA/LUCA samples) is handled by
+# Figure5/Fig5c_spatial_lr_overlap.py (needs an external Visium h5ad), and Fig.5d (per-cancer-type density/
+# correlation of scRNA-seq/Visium LR strength) by Figure5/Fig5d_sc_vs_visium_scatter.py.
 #
-# 참고(Fig5b 데이터 출처): 예전 Source_Data_Fig5.xlsx의 "Fig.5b top/bottom" 시트는 실제
-# 출판된 Fig5b와 다른 LR pair 목록을 담고 있어(FST-BMPR2 등 논문 유전자 없음) 원본 분석과
-# 대조한 별도 CSV(Verified_Source_Data/)를 썼다. 시트가 수정되어 그 CSV와 값이 일치하므로
-# (988행, LR pair 64개, z-score 차이 < 1e-15) CSV를 제거하고 시트를 직접 읽는다. 시트가 다시
-# 바뀌어 행 수·LR pair 수·암종 수가 아래 기대값과 다르면 조용히 다른 그림을 그리지 않도록
-# 오류로 멈춘다. 의도적으로 갱신한 경우 fig5b_expected를 새 값으로 고친다.
+# Note (source of the Fig5b data): the "Fig.5b top/bottom" sheets of an earlier Source_Data_Fig5.xlsx contained an
+# LR pair list different from the published Fig5b (none of the paper's genes such as FST-BMPR2), so a separate
+# CSV (Verified_Source_Data/), checked against the original analysis, was used instead. The sheet has since been
+# corrected and agrees with that CSV (988 rows, 64 LR pairs, z-score difference < 1e-15), so the CSV was removed and
+# the sheet is read directly. If the sheet changes again and the number of rows, LR pairs or cancer types differs
+# from the expected values below, the script stops with an error instead of silently drawing a different figure.
+# If the change is intentional, update fig5b_expected to the new values.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({
@@ -66,8 +67,8 @@ dev.off()
 fig5b_verified <- read_source("Source_Data_Fig5.xlsx", "Fig.5b top")
 fig5b_verified <- fig5b_verified[!is.na(fig5b_verified$lr_pair), c("lr_pair", "cancer_type", "strength", "group_pair", "z_score")]
 
-### Source Data 검증 ####
-# group_pair별 행 수 / LR pair 수 (Fig.5b: T cell-B cell 37개, Endothelial-Mural 39개 LR pair x 13개 암종)
+### Source Data validation ####
+# Rows / LR pairs per group_pair (Fig.5b: 37 T cell-B cell and 39 Endothelial-Mural LR pairs x 13 cancer types)
 fig5b_expected <- data.frame(
   group_pair = c("T cell-B cell", "Endothelial-Mural"),
   n_rows     = c(481L, 507L),
@@ -102,7 +103,7 @@ write.csv(fig5b_verified, file.path(out_dir, "Fig5b_plot_data.csv"), row.names =
 
 make_lr_heatmap <- function(group_label) {
   x <- fig5b_verified[fig5b_verified$group_pair == group_label, ]
-  lr_order <- unique(x$lr_pair)          # Figure의 행 순서 (파일에 이미 그 순서로 기록됨)
+  lr_order <- unique(x$lr_pair)          # row order of the figure (already recorded in that order in the file)
   col_order <- intersect(cancer_order, unique(x$cancer_type))
   mat <- xtabs(z_score ~ lr_pair + cancer_type, data = x)
   mat <- mat[lr_order, col_order]

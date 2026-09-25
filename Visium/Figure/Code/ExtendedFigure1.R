@@ -1,19 +1,19 @@
-# 분석 목적
-#   - Source_Data_Extended_Fig1.xlsx로부터 Extended Fig.1c, 1f를 재현한다
-#     (Myeloid/Fibroblast subtype별 MSigDB Hallmark 2020 pathway enrichment).
+# Purpose
+#   - Reproduces Extended Fig.1c and 1f from Source_Data_Extended_Fig1.xlsx
+#     (MSigDB Hallmark 2020 pathway enrichment per Myeloid/Fibroblast subtype).
 #
-# 분석 흐름
-#   1. Enrichr 결과(Term x cluster_name)를 -log10(Adjusted P-value) 행렬로 정리한다.
-#   2. 유의수준에 따른 기호(*, **, ***)를 셀에 함께 표기하는 heatmap을 그린다.
+# Workflow
+#   1. Arrange the Enrichr results (Term x cluster_name) into a -log10(Adjusted P-value) matrix.
+#   2. Draw a heatmap that also marks significance levels (*, **, ***) in the cells.
 #
-# 주요 출력
+# Main outputs
 #   - ExtFig1c.pdf (Myeloid), ExtFig1f.pdf (Fibroblast)
 #
-# 출력 위치
+# Output location
 #   - Output/ExtendedFigure1/
 #
-# 참고: Extended Fig.1a-b, 1d-e(scRNA-seq UMAP, marker gene dot plot)는 Source Data가
-# 없는 embedding/dot plot이라 재현 대상에서 제외한다.
+# Note: Extended Fig.1a-b and 1d-e (scRNA-seq UMAP, marker gene dot plot) are embedding/dot plots without
+# Source Data, so they are excluded.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({
@@ -47,7 +47,7 @@ plot_hallmark <- function(sheet, panel, title) {
     star_mat[star_dat$Term[i], star_dat$cluster_name[i]] <- star_dat$symbol[i]
   }
 
-  # 원본 legend와 동일하게 색상 스케일을 5(-log10(padj))에서 saturate시킨다.
+  # Saturate the color scale at 5 (-log10(padj)), same as the original legend.
   mat_capped <- pmin(mat, 5)
   col_fun <- colorRamp2(c(0, 2.5, 5), magma(3))
   ht <- Heatmap(mat_capped, name = "-log10(padj)", col = col_fun,

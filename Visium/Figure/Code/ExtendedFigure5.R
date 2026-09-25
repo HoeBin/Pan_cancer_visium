@@ -1,23 +1,22 @@
-# 분석 목적
-#   - Source_Data_Extended_Fig5.xlsx로부터 Extended Fig.5a를 재현한다
-#     (major cell-type pair co-localization의 compartment별 비교).
+# Purpose
+#   - Reproduces Extended Fig.5a from Source_Data_Extended_Fig5.xlsx
+#     (compartment-wise comparison of major cell-type pair co-localization).
 #
-# 분석 흐름
-#   1. Fig.5a 21개 major cell-type pair의 compartment별(Malignant/Boundary/Normal)
-#      median Jaccard score 분포를 grouped boxplot과 pair 표시 패널로 그린다.
+# Workflow
+#   1. Draw the distribution of the median Jaccard score of the 21 major cell-type pairs (Fig.5a) per compartment
+#      (Malignant/Boundary/Normal) as a grouped boxplot with a pair-indicator panel.
 #
-# 주요 출력
+# Main outputs
 #   - ExtFig5a.pdf
 #
-# 출력 위치
+# Output location
 #   - Output/ExtendedFigure5/
 #
-# 참고: Ext.Fig.5b(Epi-Epi/Epi-TME/TME-TME 세 그룹의 compartment 간 비교)는
-# Code/Figure3/05_ExtDataFig5b_7d_pair_categories.py가 담당한다 (같은
-# Source_Data_Extended_Fig5.xlsx의 "ED Fig.5b" 시트). 해당 스크립트는 같은 슬라이드가
-# 세 compartment 모두에 매칭되는 데이터임을 반영해 paired Wilcoxon(+슬라이드 매칭)을
-# 쓰며, 이 R 스크립트가 이전에 쓰던 `stat_compare_means(..., comparisons=...)`는
-# paired=TRUE 지정이 없어 unpaired Wilcoxon으로 계산되던 차이가 있었다.
+# Note: Ext.Fig.5b (comparison of the three groups Epi-Epi/Epi-TME/TME-TME across compartments) is handled
+# by Code/Figure3/ExtDataFig5b_7d_pair_categories.py (the "ED Fig.5b" sheet of the same
+# Source_Data_Extended_Fig5.xlsx). That script uses a paired Wilcoxon test (with slide matching), reflecting
+# that the same slide is matched in all three compartments, whereas the `stat_compare_means(..., comparisons=...)`
+# previously used in this R script did not specify paired=TRUE and therefore computed an unpaired Wilcoxon test.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({
@@ -36,9 +35,9 @@ dir.create(plot_dir, recursive = TRUE, showWarnings = FALSE)
 a5 <- read_source("Source_Data_Extended_Fig5.xlsx", "ED Fig.5a")
 a5 <- a5[!is.na(a5$Feat_pair), ]
 
-# 21개 pair는 값으로 정렬하지 않는다. legend 순서(Epithelial -> T cell -> B cell ->
-# Myeloid -> Endothelial -> Fibroblast -> Mural)의 상삼각(i<j) 조합을 그대로 나열하는
-# 고정된 순서다 (원본 그림에서 각 anchor 블록 내부도 celltype_order를 그대로 따름).
+# The 21 pairs are not sorted by value. They are a fixed order that simply lists the upper-triangle (i<j)
+# combinations of the legend order (Epithelial -> T cell -> B cell -> Myeloid -> Endothelial -> Fibroblast -> Mural)
+# (in the original figure, the order inside each anchor block also follows celltype_order).
 all_pairs <- unique(a5$Feat_pair)
 pair_c1 <- sub("-.*$", "", all_pairs)
 pair_c2 <- sub("^.*?-", "", all_pairs)
@@ -63,10 +62,10 @@ p5a_top <- ggplot(a5, aes(Feat_pair, median_J_comp, fill = Region)) +
   labs(x = NULL, y = "Median Jaccard score") +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
 
-## Pan_cancer_visium/Visium/Figure/Supplementary_Figure15.R(p15a_matrix)의 원본
-## 패턴을 따른다: y축은 "top/bottom" 같은 임의 값이 아니라 실제 7개 cell type이며,
-## 각 pair는 자신을 이루는 두 cell type의 고정된 행(celltype_order 순서, 위 Epithelial
-## ~ 아래 Mural)에 점을 찍고 grey 선으로 잇는 진짜 UpSet-matrix 구조다.
+## Follows the original pattern of Pan_cancer_visium/Visium/Figure/Supplementary_Figure15.R (p15a_matrix): the y-axis is not
+## an arbitrary value such as "top/bottom" but the actual 7 cell types, and each pair is a true UpSet-matrix
+## structure: points are placed on the fixed rows of the two cell types that make it up (celltype_order,
+## Epithelial at the top to Mural at the bottom) and joined by a grey line.
 pair_dots <- bind_rows(
   a5 %>% distinct(Feat_pair) %>% mutate(celltype = sub("-.*$", "", Feat_pair)),
   a5 %>% distinct(Feat_pair) %>% mutate(celltype = sub("^.*-", "", Feat_pair))

@@ -1,16 +1,16 @@
-# 분석 목적
-#   - Source_Data_Extended_Fig4.xlsx로부터 Extended Fig.4a-d를 재현한다
-#     (compartment별 CNV score/spot 수, CNV score와 cell-type proportion의 상관관계).
+# Purpose
+#   - Reproduces Extended Fig.4a-d from Source_Data_Extended_Fig4.xlsx
+#     (CNV score/spot count per compartment, correlation of the CNV score with cell-type proportions).
 #
-# 분석 흐름
-#   1. Fig.4a-b compartment별 CNV score, spot 수 boxplot을 그린다.
-#   2. Fig.4c global cell-type proportion과 CNV score의 상관관계 bar plot을 그린다.
-#   3. Fig.4d subtype proportion과 CNV score의 상관관계 bar plot을 lineage 색상으로 그린다.
+# Workflow
+#   1. Draw boxplots of the CNV score and spot count per compartment (Fig.4a-b).
+#   2. Draw a bar plot of the correlation between global cell-type proportions and the CNV score (Fig.4c).
+#   3. Draw a bar plot of the correlation between subtype proportions and the CNV score, colored by lineage (Fig.4d).
 #
-# 주요 출력
+# Main outputs
 #   - ExtFig4a.pdf, ExtFig4b.pdf, ExtFig4c.pdf, ExtFig4d.pdf
 #
-# 출력 위치
+# Output location
 #   - Output/ExtendedFigure4/
 
 # "Libraries and paths" -------------------------------------------------------
@@ -74,7 +74,7 @@ d4 <- d4[!is.na(d4$celltype), ] %>% arrange(desc(correlation))
 d4$celltype <- factor(d4$celltype, levels = d4$celltype)
 d4$lineage <- subtype_lineage[as.character(d4$celltype)]
 write.csv(d4, file.path(out_dir, "ExtFig4d_sub_correlation.csv"), row.names = FALSE)
-# subtype 이름에 그리스 문자(gamma-delta T)가 있어 cairo_pdf 장치를 사용한다.
+# Use the cairo_pdf device because subtype names contain Greek letters (gamma-delta T).
 p4d <- ggplot(d4, aes(celltype, correlation, fill = lineage)) +
   geom_col(color = NA) +
   scale_fill_manual(values = celltype_colors_spaced, name = "Lineage") +

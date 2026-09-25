@@ -1,23 +1,24 @@
-# 분석 목적
-#   - Fig.3a(전체 13개 암종)와 Extended Data Fig.7a(BRCA 30 slide 다운샘플 코호트)의 major cell type 간
-#     abundance 상관 heatmap(dot annotation)을 재현한다.
+# Purpose
+#   - Reproduces the abundance-correlation heatmaps (with dot annotation) between major cell types for Fig.3a (all 13
+#     cancer types) and Extended Data Fig.7a (BRCA downsampled to 30 slides).
 #
-# 분석 흐름
-#   1. 입력 표(celltype_1, celltype_2, correlation)를 읽는다.
-#      - Fig.3a   : 기본값은 Input/fig3a_source_data.csv, --fig3a-source=xlsx이면 Source_Data_Fig3.xlsx의 Fig.3a 시트
-#      - Ext.Fig.7a: Source_Data_Extended_Fig7.xlsx의 ED Fig.7a 시트
-#   2. long 표를 7x7 상관 행렬로 바꾸고 대칭성과 값의 범위를 점검한다.
-#   3. row/column을 세포유형 색 dot으로 표시한 ComplexHeatmap을 그린다.
+# Workflow
+#   1. Read the input table (celltype_1, celltype_2, correlation).
+#      - Fig.3a   : Input/fig3a_source_data.csv by default; the Fig.3a sheet of Source_Data_Fig3.xlsx with --fig3a-source=xlsx
+#      - Ext.Fig.7a: the ED Fig.7a sheet of Source_Data_Extended_Fig7.xlsx
+#   2. Convert the long table into a 7x7 correlation matrix and check its symmetry and value range.
+#   3. Draw a ComplexHeatmap whose rows/columns are marked by cell-type color dots.
 #
-# 주요 출력
+# Main outputs
 #   - fig3a_global_correlation.pdf, extfig7a_global_correlation.pdf
 #   - source_data_fig3a.csv, source_data_extfig7a.csv
 #
-# 출력 위치
+# Output location
 #   - Output/Figure3/, Output/ExtendedFigure7/
 #
-# 참고: Source Data의 Fig.3a 시트가 갱신되면 `Rscript Fig3a_ExtDataFig7a_correlation_heatmap.R --fig3a-source=xlsx`로
-# 그대로 사용할 수 있다. csv 모드에서는 Input CSV와 xlsx 시트의 최대 절대 차이를 함께 출력해 갱신 여부를 알려준다.
+# Note: once the Fig.3a sheet of the Source Data is updated, it can be used directly with
+# `Rscript Fig3a_ExtDataFig7a_correlation_heatmap.R --fig3a-source=xlsx`. In csv mode the maximum absolute difference
+# between the input CSV and the xlsx sheet is also printed, which shows whether the sheet has been updated.
 
 # Libraries and paths ---------------------------------------------------------
 suppressPackageStartupMessages({
@@ -37,7 +38,7 @@ message("Fig.3a source: ", fig3a_source)
 
 fig3a_csv <- file.path(code_dir, "Figure3/Input/fig3a_source_data.csv")
 
-# panel별 출력 위치 (out_dir: 표, plot_dir: 그림)
+# Output locations per panel (out_dir: tables, plot_dir: plots)
 panels <- list(
   fig3a    = list(out_dir = file.path(output_dir, "Figure3/Tables"),
                   plot_dir = file.path(output_dir, "Figure3/Plots")),
@@ -53,7 +54,7 @@ for (panel in names(panels)) {
 src <- list()
 if (fig3a_source == "csv") {
   src$fig3a <- read.csv(fig3a_csv, stringsAsFactors = FALSE)
-  # 배포 Excel이 갱신되었는지 확인용 (그림에는 영향 없음)
+  # To check whether the distributed Excel has been updated (does not affect the plot)
   xlsx_3a <- read_source("Source_Data_Fig3.xlsx", "Fig.3a")
   xlsx_3a <- xlsx_3a[!is.na(xlsx_3a$celltype_1), c("celltype_1", "celltype_2", "correlation")]
   chk <- merge(src$fig3a, xlsx_3a, by = c("celltype_1", "celltype_2"), suffixes = c("_csv", "_xlsx"))

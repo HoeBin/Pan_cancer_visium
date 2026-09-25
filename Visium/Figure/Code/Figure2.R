@@ -1,24 +1,24 @@
-# 분석 목적
-#   - Source_Data_Fig2.xlsx로부터 Figure 2e, 2g, 2h를 재현한다.
+# Purpose
+#   - Reproduces Figures 2e, 2g and 2h from Source_Data_Fig2.xlsx.
 #
-# 분석 흐름
-#   1. Fig.2e left/right(scRNA-seq, Visium cell-type proportion)를 암종별 boxplot으로 그린다.
-#   2. Fig.2g(compartment별 marker gene DE 결과)에서 상위 유전자를 dot plot으로 그린다.
-#   3. Fig.2h(Global/Myeloid compartment proportion)를 heatmap으로 그린다.
+# Workflow
+#   1. Draw Fig.2e left/right (scRNA-seq and Visium cell-type proportions) as boxplots per cancer type.
+#   2. Draw the top genes from Fig.2g (marker gene DE results per compartment) as a dot plot.
+#   3. Draw Fig.2h (Global/Myeloid compartment proportions) as a heatmap.
 #
-# 주요 출력
+# Main outputs
 #   - Fig2e_scRNAseq.pdf, Fig2e_Visium.pdf
 #   - Fig2g.pdf
 #   - Fig2h.pdf
 #
-# 출력 위치
+# Output location
 #   - Output/Figure2/
 #
-# 참고: Fig.2a-d(scRNA-seq/Visium UMAP), Fig.2f(malignancy UMAP density)는 Source Data가
-# 제공되지 않는 도식/embedding plot이라 재현 대상에서 제외한다. Fig.2g는 Source Data에
-# compartment 자기 자신에 대한 DE 통계(scores/logFC/pvals)만 있고, scanpy dotplot 특유의
-# 3-group 교차 발현값(다른 compartment에서의 fraction/mean expression)은 없으므로,
-# dot 크기=|logFC|, 색=score로 표현하는 근사 dot plot으로 재현한다.
+# Note: Fig.2a-d (scRNA-seq/Visium UMAP) and Fig.2f (malignancy UMAP density) are schematic/embedding plots
+# for which no Source Data is provided, so they are excluded. Fig.2g has only the DE statistics
+# (scores/logFC/pvals) of each compartment against itself in Source Data and lacks the cross-group expression
+# values of the scanpy dotplot (fraction/mean expression in the other compartments), so it is reproduced as an
+# approximate dot plot with dot size = |logFC| and color = score.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({
@@ -41,7 +41,7 @@ names(sc)  <- c("cancer_type", "sample_id", "celltype", "count", "proportion")
 names(vis) <- c("cancer_type", "celltype", "sample_id", "proportion")
 sc$celltype  <- recode(sc$celltype,  `T cell` = "Tcell", `B cell` = "Bcell")
 vis$celltype <- recode(vis$celltype, `T cell` = "Tcell", `B cell` = "Bcell")
-sc  <- sc[sc$cancer_type %in% cancer_order, ]     # nonESCA 논문 버전과 동일하게 ESCA 제외
+sc  <- sc[sc$cancer_type %in% cancer_order, ]     # exclude ESCA, same as the nonESCA version in the paper
 vis <- vis[vis$cancer_type %in% cancer_order, ]
 sc$celltype   <- factor(sc$celltype,  levels = celltype_order)
 vis$celltype  <- factor(vis$celltype, levels = celltype_order)

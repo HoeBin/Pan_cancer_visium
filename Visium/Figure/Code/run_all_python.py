@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Paper_info/Source_Data의 공식 Source Data만을 입력으로 사용해 Figure3 전체, Fig.4(a,b,d,f,g),
-Fig.5d, Ext.Fig.3/5b/6/7/8/10, Supp.Fig.11-13의 Python 패널을 순서대로 실행한다. Fig.4c, Fig.5(a,b)와
-Ext.Fig.1/2/4는 R로 재현되며 run_all.R / run_all_extended.R이 담당한다 (겹치는 패널은 이 스크립트,
-즉 Fig345_code_sourcedata_upload_최종_use_Ver2에서 가져온 Python 코드가 우선).
+"""Runs the Python panels (all of Figure 3, Fig. 4(a,b,d,f,g), Fig. 5d, Ext. Fig. 3/5b/6/7/8/10 and Supp. Fig. 11-13)
+in order, using only the officially distributed Source Data in Paper_info/Source_Data as input. Fig. 4c, Fig. 5(a,b) and
+Ext. Fig. 1/2/4 are reproduced in R and handled by run_all.R / run_all_extended.R (for overlapping panels this script
+takes precedence, i.e. the Python code taken from the Fig345 Source Data upload codebase (final Ver2)).
 
-개별 스크립트도 `python Code/Figure3/*.py` 등으로 독립 실행 가능하며 서로 의존하지 않는다
-(Fig4e_ExtDataFig9_slide_panels.py / ExtDataFig9_grid_3x3.py 제외: 후자가 전자의 결과물을 사용).
+Individual scripts can also be run on their own, e.g. `python Code/Figure3/*.py`, and do not depend on each other
+(exception: Fig4e_ExtDataFig9_slide_panels.py / ExtDataFig9_grid_3x3.py; the latter uses the output of the former).
 
-Fig.4e/Ext.Fig.9와 Fig.5c는 공식 배포된 Source Data가 아니라 원본 Visium h5ad가 있어야 그려진다.
-PCASSO_VISIUM_H5AD 환경변수가 설정되어 있을 때만 실행하고, 없으면 건너뛴다.
+Fig. 4e/Ext. Fig. 9 and Fig. 5c are not drawn from the officially distributed Source Data but need the original Visium h5ad.
+They are run only when the PCASSO_VISIUM_H5AD environment variable is set, and skipped otherwise.
 """
 import os
 import subprocess

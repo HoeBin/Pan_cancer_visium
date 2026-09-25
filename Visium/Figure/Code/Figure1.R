@@ -1,22 +1,22 @@
-# 분석 목적
-#   - Source_Data_Fig1.xlsx(Fig.1a)로부터 암종별 scRNA-seq/Visium 샘플·세포·spot 수를 재현한다.
+# Purpose
+#   - Reproduces the per-cancer-type numbers of scRNA-seq/Visium samples, cells and spots from Source_Data_Fig1.xlsx (Fig.1a).
 #
-# 분석 흐름
-#   1. Fig.1a 시트를 읽어 암종별 표본 규모 표를 정리한다.
-#   2. scRNA-seq(샘플 수/세포 수)와 Visium(샘플 수/spot 수) 막대그래프를 각각 그린다.
-#   3. 네 지표를 하나의 patchwork 그림으로 합쳐 저장한다.
+# Workflow
+#   1. Read the Fig.1a sheet and tabulate the sample size per cancer type.
+#   2. Draw bar plots for scRNA-seq (samples/cells) and Visium (samples/spots) separately.
+#   3. Combine the four metrics into one patchwork figure and save it.
 #
-# 주요 출력
-#   - Fig1a.pdf (scRNA-seq/Visium 샘플·세포·spot 수 막대그래프)
+# Main outputs
+#   - Fig1a.pdf (bar plots of scRNA-seq/Visium samples, cells and spots)
 #   - Fig1a_sample_summary.csv
 #
-# 출력 위치
+# Output location
 #   - Output/Figure1/
 #
-# 참고: 원본 Fig.1a는 BioRender로 제작한 인체 실루엣을 중심에 둔 원형(fan) 막대그래프이며,
-# Fig.1b는 전체가 BioRender 도식(workflow schematic)이다. 저작권이 있는 BioRender 아트워크와
-# 수작업 배치는 코드로 재현하지 않고, 여기서는 Fig.1a에 담긴 수치 데이터만 동일한 정보량의
-# 막대그래프로 재현한다. Fig.1b는 재현 대상 데이터가 없어 제외한다.
+# Note: the original Fig.1a is a circular (fan) bar plot built around a BioRender human silhouette, and
+# Fig.1b is entirely a BioRender workflow schematic. The copyrighted BioRender artwork and the manual
+# layout are not reproduced in code; only the numerical data in Fig.1a is reproduced here as bar plots
+# with the same information content. Fig.1b is excluded because it has no data to reproduce.
 
 # "Libraries and paths" -------------------------------------------------------
 suppressPackageStartupMessages({
