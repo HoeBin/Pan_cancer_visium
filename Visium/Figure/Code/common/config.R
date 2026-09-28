@@ -6,10 +6,10 @@
 
 script_arg  <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- normalizePath(sub("^--file=", "", script_arg))
-if (!exists("code_dir")) code_dir <- dirname(script_path)  # .../Github_code_v2/Code
+if (!exists("code_dir")) code_dir <- dirname(script_path)  # .../<repo root>/Code
 root_dir       <- code_dir
-github_code_dir <- dirname(code_dir)                        # .../Github_code_v2
-source_data_dir <- file.path(github_code_dir, "Paper_info/Paper_info/Source_Data")
+github_code_dir <- dirname(code_dir)                        # .../<repo root>
+source_data_dir <- file.path(github_code_dir, "Paper_info/Paper_info_260928/Source_data")  # dated Source Data snapshot; see SYNC_RULES.md
 output_dir      <- file.path(github_code_dir, "Output")
 
 # "Source Data loader" -----------------------------------------------------------

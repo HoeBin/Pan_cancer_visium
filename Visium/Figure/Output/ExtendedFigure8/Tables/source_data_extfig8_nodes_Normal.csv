@@ -25,7 +25,7 @@ CD8_Trm,T cell,26
 CD4_Th17,T cell,24
 CD4_Th1,T cell,27
 CD8_Tex,T cell,21
-gd_T,Myeloid,20
+γδ_T,T cell,20
 CD4_Treg,T cell,20
 Arterial_EC,Endothelial,5
 Fibrosis_PGF+_Tip_EC,Endothelial,3

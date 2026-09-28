@@ -2,10 +2,12 @@
 
 This repository holds the code (`Code/`) and its output (`Output/`) that reproduce the data-driven
 panels of the Main/Extended Data Figures using only the officially distributed
-`Paper_info/Paper_info/Source_Data/*.xlsx` as input. R and Python are mixed — each panel keeps the
+`Paper_info/Paper_info_260928/Source_data/*.xlsx` as input. R and Python are mixed — each panel keeps the
 language of the codebase in which it was originally verified (see "Mixing R and Python" below).
-`Paper_info/Paper_info` stores the original manuscript distribution material (Source Data, Manuscript,
-Figure PDFs, etc.) as is, and this code writes no files into it.
+`Paper_info/Paper_info_260928` stores the original manuscript distribution material (Source Data, Manuscript,
+Figure PDFs, etc.) as is, and this code writes no files into it. It is a dated snapshot; only the folder named in
+`common/config.R`/`config.py` (`SOURCE_DATA_DIR`) is actually read. This repository includes only its
+`Source_data/*.xlsx` (the manuscript, Figure PDFs and earlier snapshots are not included).
 
 Of the two code layers, only the **Figure layer** is included: there are only scripts that read the Source
 Data (xlsx) and draw the figures, and the Analysis layer that recomputes statistics from external raw data
@@ -22,8 +24,8 @@ Visium/Figure/
     common/config.R, config.py        — paths, palettes, Source Data readers (R/Python pair)
     Data_Info/subtype_lineage_map.csv — for the network node colors of Fig.3d/Ext.Fig.6/8 (93 subtypes -> 7 lineages)
     Figure1.R, Figure2.R                       — R, standalone
-    Figure3/Fig3a_ExtDataFig7a_correlation_heatmap.R — R, Fig.3a + Ext.Fig.7a (Fig.3a uses Input/fig3a_source_data.csv, see "Fig.3a input" below)
-    Figure3/Input/fig3a_source_data.csv        — bundled input: Fig.3a correlation matrix (not Source Data)
+    Figure3/Fig3a_ExtDataFig7a_correlation_heatmap.R — R, Fig.3a + Ext.Fig.7a (Fig.3a reads Source_Data_Fig3.xlsx by default, see "Fig.3a input" below)
+    Figure3/Input/fig3a_source_data.csv        — frozen fallback for Fig.3a (--fig3a-source=csv; not Source Data)
     Figure3/Fig3d_ExtDataFig6_8_networks.py, Fig3ef_ExtDataFig7ef_centrality.py,
            Fig3cgh_ExtDataFig7cgh.py, Fig3b_ExtDataFig7b.py,
            ExtDataFig5b_7d_pair_categories.py, Suppfig11_bc_by_compartment.py
@@ -47,8 +49,8 @@ Visium/Figure/
     run_all_python.py    — runs the Python panels in order (all of Fig.3, Fig.4(a,b,d,f,g), Fig.5d, Ext.Fig.3/5b/6/7/8/10,
                             Supp.11-13; also continues with the h5ad panels when PCASSO_VISIUM_H5AD is set)
   Output/FigureN/{Plots,Tables}/, ExtendedFigureN/{Plots,Tables}/, SupplementaryFigureN/{Plots,Tables}/
-  Paper_info/Paper_info/         — officially distributed manuscript material (input, read-only)
-    Source_Data/*.xlsx           — only Source_Data is included in this repository (the manuscript, Figure PDFs/PPTX, etc. are excluded)
+  Paper_info/Paper_info_260928/  — officially distributed manuscript material, current snapshot (input, read-only)
+    Source_data/*.xlsx           — read by common/config.R and config.py (only Source_data is included in this repository)
 ```
 
 ## Mixing R and Python, and precedence of overlapping panels
@@ -66,6 +68,15 @@ was verified against the original pipeline down to the pixel level on 2026-09-07
 Panels that do not overlap and keep their original code: Fig.4c (R, `Figure4/Fig4c_pEMT_abundance_correlation.R`), Fig.5a-b (R,
 `Figure5/Fig5ab_pancancer_LR_zscore.R`), Ext.Fig.5a (R, `ExtendedFigure5.R`), Fig.1/2 and Ext.Fig.1/2/4 (R, none of which
 are covered by the Python codebase).
+
+## Extended Fig.4a-b statistics
+
+Extended Fig.4a plots per-slide `median_cnv`; Extended Fig.4b plots per-slide spot counts (`n`).
+Both panels use two-sided paired Wilcoxon signed-rank tests, with observations matched explicitly by
+`sample_id` for each compartment comparison. The six P values agree with the manuscript plot labels
+at their displayed precision (checked on 2026-09-25). Exact computed P values and matched slide counts
+are saved in `Output/ExtendedFigure4/Tables/ExtFig4ab_paired_statistics.csv`.
+The CNV source export retains both `mean_cnv` and `median_cnv`; the plotted variable is `median_cnv`.
 
 ## Scope and limitations (panels excluded because no Source Data exists)
 
@@ -94,18 +105,26 @@ python Code/run_all_python.py             # with the environment variable above 
 
 ## Fig.3a input
 
-The `Fig.3a` sheet of `Source_Data_Fig3.xlsx` holds the old proportion-based correlation values (-0.62 to 0.61), which do not
-match the manuscript text ("Epithelial cells showed near-zero correlations"). Fig.3a therefore uses
-`Code/Figure3/Input/fig3a_source_data.csv`, which holds the abundance-based correlation (13 cancer types without ESCA,
-0.016 to 0.833), as its default input. Once the Excel file is updated,
+**Resolved (2026-09-28):** earlier Source Data snapshots (not included in this repository) had a `Fig.3a` sheet
+with old proportion-based correlation values (-0.62 to 0.61), which did not match the manuscript text
+("Epithelial cells showed near-zero correlations"). Fig.3a therefore used to default to the bundled
+`Code/Figure3/Input/fig3a_source_data.csv` (abundance-based, 13 cancer types without ESCA, 0.016 to
+0.833) as a workaround, matching the upstream analysis output
+`Code_data_figure/Output/Figure3/Tables/Fig3a_global_correlation.csv`.
+
+The `Paper_info_260928` snapshot corrects the `Fig.3a` sheet: it is now byte-for-byte the same
+abundance-based correlation as the frozen CSV (max |diff| = 0 over all 49 cells). Fig.3a therefore now
+reads `Source_Data_Fig3.xlsx`'s `Fig.3a` sheet by default. `Code/Figure3/Input/fig3a_source_data.csv` is
+kept only as a frozen fallback/cross-check, selectable with:
 
 ```bash
-Rscript Code/Figure3/Fig3a_ExtDataFig7a_correlation_heatmap.R --fig3a-source=xlsx
+Rscript Code/Figure3/Fig3a_ExtDataFig7a_correlation_heatmap.R --fig3a-source=csv
 ```
 
-uses the `Fig.3a` sheet directly. In the default (csv) mode, the maximum absolute difference between the CSV and the xlsx
-sheet is printed on every run, so you can tell whether the sheet has been updated. Ext.Fig.7a reads the `ED Fig.7a` sheet of
-`Source_Data_Extended_Fig7.xlsx` (BRCA downsampled to 30 slides, already abundance-based) as is.
+Every run — in either mode — prints the maximum absolute difference between the frozen CSV and the live
+xlsx sheet, so a future Source Data update that silently drifts from the frozen snapshot is caught.
+Ext.Fig.7a reads the `ED Fig.7a` sheet of `Source_Data_Extended_Fig7.xlsx` (BRCA downsampled to 30
+slides, already abundance-based) as is.
 
 Each script can also be run on its own (`Rscript Code/Figure1.R`, `python Code/Figure3/Fig3d_ExtDataFig6_8_networks.py`, etc.).
 `Figure4/ExtDataFig9_grid_3x3.py` uses the output of `Figure4/Fig4e_ExtDataFig9_slide_panels.py`, so that

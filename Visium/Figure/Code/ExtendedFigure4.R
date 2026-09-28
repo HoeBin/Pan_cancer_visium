@@ -3,12 +3,13 @@
 #     (CNV score/spot count per compartment, correlation of the CNV score with cell-type proportions).
 #
 # Workflow
-#   1. Draw boxplots of the CNV score and spot count per compartment (Fig.4a-b).
+#   1. Draw median-CNV and spot-count boxplots with slide-matched paired Wilcoxon tests (Fig.4a-b).
 #   2. Draw a bar plot of the correlation between global cell-type proportions and the CNV score (Fig.4c).
 #   3. Draw a bar plot of the correlation between subtype proportions and the CNV score, colored by lineage (Fig.4d).
 #
 # Main outputs
 #   - ExtFig4a.pdf, ExtFig4b.pdf, ExtFig4c.pdf, ExtFig4d.pdf
+#   - ExtFig4ab_paired_statistics.csv (sample-matched two-sided P values)
 #
 # Output location
 #   - Output/ExtendedFigure4/
@@ -27,12 +28,35 @@ dir.create(out_dir,  recursive = TRUE, showWarnings = FALSE)
 dir.create(plot_dir, recursive = TRUE, showWarnings = FALSE)
 
 # "Extended Fig 4a-b: CNV score / spot count by compartment" ------------------
-plot_compartment <- function(dat, y, title, ylab) {
+paired_statistics <- function(dat, y, panel) {
+  # Match by slide ID explicitly; Excel row order must not determine pairing.
+  if (anyNA(dat$sample_id) || anyDuplicated(dat[c("sample_id", "Malignancy")]))
+    stop(panel, ": missing sample IDs or duplicate slide-compartment rows")
+  wide <- dat %>% select(sample_id, Malignancy, all_of(y)) %>%
+    pivot_wider(names_from = Malignancy, values_from = all_of(y))
+  if (!all(mal_order %in% names(wide))) stop(panel, ": missing compartments")
+  comparisons <- list(c("Malignant", "Boundary"), c("Boundary", "Normal"),
+                      c("Malignant", "Normal"))
+  bind_rows(lapply(comparisons, function(pair) {
+    keep <- is.finite(wide[[pair[1]]]) & is.finite(wide[[pair[2]]])
+    if (sum(keep) < 2L) stop(panel, ": fewer than two matched slides")
+    test <- wilcox.test(wide[[pair[1]]][keep], wide[[pair[2]]][keep],
+                        paired = TRUE, alternative = "two.sided", exact = FALSE, correct = TRUE)
+    data.frame(panel = panel, variable = y, group1 = pair[1], group2 = pair[2],
+               n_pairs = sum(keep), test = "wilcoxon_signed_rank", p_value = test$p.value)
+  }))
+}
+
+plot_compartment <- function(dat, y, title, ylab, stats) {
   dat$Malignancy <- factor(dat$Malignancy, levels = mal_order)
+  yrange <- range(dat[[y]], finite = TRUE)
+  span <- max(diff(yrange), 1)
+  stats$y.position <- yrange[2] + span * c(0.08, 0.18, 0.28)
+  stats$label <- sprintf("p = %.2e", stats$p_value)
   ggplot(dat, aes(Malignancy, .data[[y]])) +
     geom_jitter(width = 0.15, size = 0.6, color = "grey60", alpha = 0.4) +
     geom_boxplot(aes(color = Malignancy), fill = NA, outlier.shape = NA, linewidth = 0.8) +
-    stat_compare_means(method = "wilcox.test", comparisons = mal_comparisons, label = "p.format") +
+    stat_pvalue_manual(stats, label = "label", tip.length = 0.01) +
     scale_color_manual(values = mal_colors, guide = "none") +
     base_theme +
     labs(title = title, x = NULL, y = ylab)
@@ -41,15 +65,18 @@ plot_compartment <- function(dat, y, title, ylab) {
 a4 <- read_source("Source_Data_Extended_Fig4.xlsx", "ED Fig.4a")
 a4 <- a4[!is.na(a4$Malignancy), ]
 write.csv(a4, file.path(out_dir, "ExtFig4a_cnv_score.csv"), row.names = FALSE)
+a4_stats <- paired_statistics(a4, "median_cnv", "ExtFig4a")
 pdf(file.path(plot_dir, "ExtFig4a.pdf"), width = 4.5, height = 5)
-print(plot_compartment(a4, "mean_cnv", "CNV score", "CNV"))
+print(plot_compartment(a4, "median_cnv", "CNV score", "CNV", a4_stats))
 dev.off()
 
 b4 <- read_source("Source_Data_Extended_Fig4.xlsx", "ED Fig.4b")
 b4 <- b4[!is.na(b4$Malignancy), ]
 write.csv(b4, file.path(out_dir, "ExtFig4b_spot_count.csv"), row.names = FALSE)
+b4_stats <- paired_statistics(b4, "n", "ExtFig4b")
+write.csv(bind_rows(a4_stats, b4_stats), file.path(out_dir, "ExtFig4ab_paired_statistics.csv"), row.names = FALSE)
 pdf(file.path(plot_dir, "ExtFig4b.pdf"), width = 4.5, height = 5)
-print(plot_compartment(b4, "n", "Number of spot", "Count"))
+print(plot_compartment(b4, "n", "Number of spot", "Count", b4_stats))
 dev.off()
 
 # "Extended Fig 4c: global proportion vs CNV score correlation" ---------------

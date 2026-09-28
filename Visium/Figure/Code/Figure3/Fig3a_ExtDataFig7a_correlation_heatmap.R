@@ -4,7 +4,8 @@
 #
 # Workflow
 #   1. Read the input table (celltype_1, celltype_2, correlation).
-#      - Fig.3a   : Input/fig3a_source_data.csv by default; the Fig.3a sheet of Source_Data_Fig3.xlsx with --fig3a-source=xlsx
+#      - Fig.3a   : the Fig.3a sheet of Source_Data_Fig3.xlsx (Paper_info_260928) by default;
+#                   --fig3a-source=csv falls back to the frozen Input/fig3a_source_data.csv
 #      - Ext.Fig.7a: the ED Fig.7a sheet of Source_Data_Extended_Fig7.xlsx
 #   2. Convert the long table into a 7x7 correlation matrix and check its symmetry and value range.
 #   3. Draw a ComplexHeatmap whose rows/columns are marked by cell-type color dots.
@@ -16,9 +17,11 @@
 # Output location
 #   - Output/Figure3/, Output/ExtendedFigure7/
 #
-# Note: once the Fig.3a sheet of the Source Data is updated, it can be used directly with
-# `Rscript Fig3a_ExtDataFig7a_correlation_heatmap.R --fig3a-source=xlsx`. In csv mode the maximum absolute difference
-# between the input CSV and the xlsx sheet is also printed, which shows whether the sheet has been updated.
+# Note: Source_Data_Fig3.xlsx's Fig.3a sheet was corrected in the Paper_info_260928 snapshot (2026-09-28) and now
+# matches the frozen Input/fig3a_source_data.csv (abundance-based correlation, ESCA excluded, 13 cancer types) to
+# within floating-point precision, so the script now reads the xlsx sheet by default. The script always prints the
+# max absolute difference between the two so a future Source Data update that silently drifts is caught; pass
+# --fig3a-source=csv to force the frozen snapshot instead of the live sheet.
 
 # Libraries and paths ---------------------------------------------------------
 suppressPackageStartupMessages({
@@ -29,7 +32,7 @@ script_path <- normalizePath(sub("^--file=", "", script_arg))
 code_dir    <- dirname(dirname(script_path))
 source(file.path(code_dir, "common/config.R"))
 
-fig3a_source <- "csv"
+fig3a_source <- "xlsx"
 for (arg in commandArgs(trailingOnly = TRUE)) {
   if (grepl("^--fig3a-source=", arg)) fig3a_source <- sub("^--fig3a-source=", "", arg)
 }
@@ -52,18 +55,16 @@ for (panel in names(panels)) {
 
 # Load source data ------------------------------------------------------------
 src <- list()
-if (fig3a_source == "csv") {
-  src$fig3a <- read.csv(fig3a_csv, stringsAsFactors = FALSE)
-  # To check whether the distributed Excel has been updated (does not affect the plot)
-  xlsx_3a <- read_source("Source_Data_Fig3.xlsx", "Fig.3a")
-  xlsx_3a <- xlsx_3a[!is.na(xlsx_3a$celltype_1), c("celltype_1", "celltype_2", "correlation")]
-  chk <- merge(src$fig3a, xlsx_3a, by = c("celltype_1", "celltype_2"), suffixes = c("_csv", "_xlsx"))
-  message("Fig.3a: CSV vs Source_Data_Fig3.xlsx max |diff| = ",
-          signif(max(abs(chk$correlation_csv - chk$correlation_xlsx)), 3),
-          " (", nrow(chk), " / ", nrow(src$fig3a), " pairs matched)")
-} else {
-  src$fig3a <- read_source("Source_Data_Fig3.xlsx", "Fig.3a")
-}
+fig3a_csv_data  <- read.csv(fig3a_csv, stringsAsFactors = FALSE)
+fig3a_xlsx_data <- read_source("Source_Data_Fig3.xlsx", "Fig.3a")
+fig3a_xlsx_data <- fig3a_xlsx_data[!is.na(fig3a_xlsx_data$celltype_1), c("celltype_1", "celltype_2", "correlation")]
+# Always compare the frozen snapshot against the live sheet so a future Source Data update that silently
+# drifts from the frozen snapshot is caught, regardless of which one is actually plotted below.
+chk <- merge(fig3a_csv_data, fig3a_xlsx_data, by = c("celltype_1", "celltype_2"), suffixes = c("_csv", "_xlsx"))
+message("Fig.3a: frozen Input/fig3a_source_data.csv vs Source_Data_Fig3.xlsx max |diff| = ",
+        signif(max(abs(chk$correlation_csv - chk$correlation_xlsx)), 3),
+        " (", nrow(chk), " / ", nrow(fig3a_csv_data), " pairs matched)")
+src$fig3a <- if (fig3a_source == "xlsx") fig3a_xlsx_data else fig3a_csv_data
 src$extfig7a <- read_source("Source_Data_Extended_Fig7.xlsx", "ED Fig.7a")
 
 # Draw heatmaps ---------------------------------------------------------------

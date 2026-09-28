@@ -14,6 +14,9 @@ Data/
 __pycache__/
 *.pyc
 
-# Visium/Figure/Paper_info: of the officially distributed material, only Source_Data is tracked (manuscript, Figure PDFs/PPTX, etc. are excluded)
-Visium/Figure/Paper_info/Paper_info/*
-!Visium/Figure/Paper_info/Paper_info/Source_Data/
+# Visium/Figure/Paper_info: of the officially distributed material, only the current snapshot's Source_data is tracked
+# (manuscript, Figure PDFs/PPTX, earlier snapshots, etc. are excluded)
+Visium/Figure/Paper_info/*
+!Visium/Figure/Paper_info/Paper_info_260928/
+Visium/Figure/Paper_info/Paper_info_260928/*
+!Visium/Figure/Paper_info/Paper_info_260928/Source_data/

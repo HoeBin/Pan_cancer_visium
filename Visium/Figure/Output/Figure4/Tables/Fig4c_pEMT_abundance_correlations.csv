@@ -17,7 +17,7 @@
 "HMGB2+_cycEC","Endothelial",0.246218150574791,0,16
 "HSP+_tCAF","Fibroblast",0.230313778589923,0,17
 "Epi_Squamous","Epithelial",0.227787250933171,0,18
-"Normal_Fibroblast","Fibroblast",0.219396544231285,0,19
+"Fibroblast","Fibroblast",0.219396544231285,0,19
 "CD1C+_cDC","Myeloid",0.212907368104689,0,20
 "CLEC9A+_cDC","Myeloid",0.209631046773333,0,21
 "TNFSF10+_Macro","Myeloid",0.208865602018537,0,22

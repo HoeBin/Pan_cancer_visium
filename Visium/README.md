@@ -22,7 +22,7 @@ Corresponds to the manuscript Methods sections:
 ## Figure reproduction
 
 [`Figure/`](Figure/README_reproduction.md) reproduces the data-driven panels of the main and extended figures
-(R and Python) from the officially distributed Source Data (`Figure/Paper_info/Paper_info/Source_Data/*.xlsx`).
+(R and Python) from the officially distributed Source Data (`Figure/Paper_info/Paper_info_260928/Source_data/*.xlsx`).
 Outputs (CSV tables and PDF plots) are written to `Figure/Output/`.
 
 ```bash
@@ -32,6 +32,6 @@ Rscript Code/run_all_extended.R           # Ext. Fig. 1, 2, 4, 5a
 python Code/run_all_python.py             # Fig. 3, 4, 5d and the remaining Ext./Supp. Figures
 ```
 
-Fig. 3a uses the bundled `Figure/Code/Figure3/Input/fig3a_source_data.csv` (abundance-based correlation,
-13 cancer types); see [`Figure/README_reproduction.md`](Figure/README_reproduction.md) for the input details,
+Fig. 3a reads the `Fig.3a` sheet of `Source_Data_Fig3.xlsx` (abundance-based correlation, 13 cancer types);
+the bundled `Figure/Code/Figure3/Input/fig3a_source_data.csv` is kept as a frozen cross-check. See [`Figure/README_reproduction.md`](Figure/README_reproduction.md) for the input details,
 the panels that are not reproducible from Source Data, and the optional h5ad-based panels.

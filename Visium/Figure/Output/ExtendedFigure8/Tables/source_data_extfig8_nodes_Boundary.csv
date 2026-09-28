@@ -37,7 +37,7 @@ Venous_iEC,Endothelial,38
 CD8_Cycling_Tex,T cell,36
 CD4_Cycling_Treg,T cell,36
 CD8_Tex,T cell,40
-gd_T,Myeloid,41
+γδ_T,T cell,41
 CD4_Treg,T cell,37
 Arterial_EC,Endothelial,19
 CD14+_EC,Endothelial,26
@@ -71,7 +71,7 @@ SPP1+_cycMacro,Myeloid,15
 HMGB2+_cycEC,Endothelial,14
 apCAF,Fibroblast,21
 mCAF,Fibroblast,7
-Normal_Fibroblast,Fibroblast,7
+Fibroblast,Fibroblast,7
 Epi_Cycle,Epithelial,3
 Epi_Luminal,Epithelial,6
 Epi_Hypox-Stress,Epithelial,10

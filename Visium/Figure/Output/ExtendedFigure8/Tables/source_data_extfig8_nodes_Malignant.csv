@@ -26,7 +26,7 @@ CD8_Trm,T cell,31
 CD4_Th17,T cell,32
 CD4_Th1,T cell,35
 CD8_Tex,T cell,34
-gd_T,Myeloid,28
+γδ_T,T cell,28
 CD4_Treg,T cell,31
 Arterial_EC,Endothelial,8
 Fibrosis_PGF+_Tip_EC,Endothelial,6
@@ -79,5 +79,5 @@ SPP1+_Macro,Myeloid,4
 CD4_Cycling_Treg,T cell,5
 SPP1+_cycMacro,Myeloid,4
 pnCAF,Fibroblast,2
-Normal_Fibroblast,Fibroblast,1
+Fibroblast,Fibroblast,1
 mCAF,Fibroblast,2

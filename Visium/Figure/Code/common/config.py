@@ -12,10 +12,10 @@ import os
 from pathlib import Path
 
 # "Paths" ---------------------------------------------------------------------
-CODE_DIR = Path(__file__).resolve().parents[1]        # .../Github_code_v2/Code
-ROOT = CODE_DIR.parent                                  # .../Github_code_v2
+CODE_DIR = Path(__file__).resolve().parents[1]        # .../<repo root>/Code
+ROOT = CODE_DIR.parent                                  # .../<repo root>
 DATA_INFO_DIR = CODE_DIR / "Data_Info"
-SOURCE_DATA_DIR = ROOT / "Paper_info" / "Paper_info" / "Source_Data"   # same files common/config.R reads
+SOURCE_DATA_DIR = ROOT / "Paper_info" / "Paper_info_260928" / "Source_data"  # dated Source Data snapshot; see SYNC_RULES.md (same files common/config.R reads)
 OUTPUT_DIR = ROOT / "Output"                                            # same root the R scripts write to
 
 SUBTYPE_LINEAGE_CSV = DATA_INFO_DIR / "subtype_lineage_map.csv"  # 93 subtypes -> 7 lineages (Fig3d/ExtFig6/8 node colours)
@@ -101,7 +101,7 @@ SHEETS = {
     "ExtFig8_Malignant": ("ExtFig8", "ED Fig.8 top", 1), "ExtFig8_Boundary": ("ExtFig8", "ED Fig.8 middle", 1),
     "ExtFig8_Normal": ("ExtFig8", "ED Fig.8 bottom", 1),
     "ExtFig3": ("ExtFig3", "ED Fig.3", 0),
-    "ExtFig10": ("ExtFig10", "ED Fig.10", 0),
+    "ExtFig10": ("ExtFig10", "ED10", 0),  # sheet name in Paper_info_260928; was "Sheet1" in the previous snapshot
     "SuppFig11": ("Supp", "Sup fig.11", 0),
     "SuppFig12_top": ("Supp", "Sup fig.12 top", None), "SuppFig12_bottom": ("Supp", "Sup fig. 12 bottom", None),
     "SuppFig13": ("Supp", "Sup fig.13", None),
@@ -135,7 +135,7 @@ def canonical_pair(pair: str, sep: str = "@") -> str:
 
 
 def source_path(fig_file: str) -> Path:
-    """File key ('Fig3') or file name ('Source_Data_Fig3.xlsx') -> path under Paper_info/Paper_info/Source_Data/."""
+    """File key ('Fig3') or file name ('Source_Data_Fig3.xlsx') -> path under SOURCE_DATA_DIR (Paper_info/Paper_info_260928/Source_data/)."""
     name = SOURCE_FILES.get(fig_file, fig_file)
     path = SOURCE_DATA_DIR / name
     if not path.exists():
