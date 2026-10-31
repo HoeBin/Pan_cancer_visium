@@ -1,7 +1,0 @@
-"panel","variable","group1","group2","n_pairs","test","p_value"
-"ExtFig4a","median_cnv","Malignant","Boundary",268,"wilcoxon_signed_rank",1.89811943542761e-44
-"ExtFig4a","median_cnv","Boundary","Normal",268,"wilcoxon_signed_rank",9.5713040927953e-30
-"ExtFig4a","median_cnv","Malignant","Normal",268,"wilcoxon_signed_rank",1.53457916273227e-45
-"ExtFig4b","n","Malignant","Boundary",268,"wilcoxon_signed_rank",2.00402008290047e-14
-"ExtFig4b","n","Boundary","Normal",268,"wilcoxon_signed_rank",1.39365441648595e-45
-"ExtFig4b","n","Malignant","Normal",268,"wilcoxon_signed_rank",8.44170646684029e-40
